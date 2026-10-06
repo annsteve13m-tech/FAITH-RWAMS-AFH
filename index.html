@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Faith Rwams AFH — a welcoming adult family home in Federal Way, Washington.">
+  <title>Faith Rwams AFH | Federal Way, WA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream:#fbf8f1; --warm:#f1e7d6; --green:#526b59; --deep:#27372d;
+      --gold:#b28a54; --white:#fff; --text:#30352f; --muted:#687069;
+      --shadow:0 14px 40px rgba(39,55,45,.10); --radius:20px;
+    }
+    * { box-sizing:border-box; scroll-behavior:smooth; }
+    body { margin:0; font-family:"DM Sans",sans-serif; color:var(--text); background:var(--cream); line-height:1.65; }
+    img { width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1120px,92%); margin:auto; }
+    .topbar { background:var(--deep); color:white; font-size:.9rem; }
+    .topbar .container { display:flex; justify-content:space-between; gap:15px; padding:9px 0; }
+    header { position:sticky; top:0; z-index:20; background:rgba(251,248,241,.96); backdrop-filter:blur(12px); border-bottom:1px solid #e8dfd0; }
+    nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-family:"Playfair Display",serif; font-size:1.25rem; font-weight:700; color:var(--deep); }
+    .brand span { color:var(--gold); display:block; font-family:"DM Sans",sans-serif; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; }
+    .links { display:flex; gap:25px; align-items:center; font-weight:600; font-size:.92rem; }
+    .links a:hover { color:var(--green); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 21px; border-radius:999px; font-weight:700; border:1px solid transparent; transition:.2s; }
+    .btn-primary { background:var(--green); color:#fff; }
+    .btn-primary:hover { transform:translateY(-1px); background:var(--deep); }
+    .btn-light { background:#fff; color:var(--deep); border-color:#e4dccd; }
+    .hero { padding:54px 0 70px; }
+    .hero-grid { display:grid; grid-template-columns:1.03fr .97fr; gap:48px; align-items:center; }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.2em; font-weight:800; font-size:.78rem; }
+    h1,h2,h3 { font-family:"Playfair Display",serif; color:var(--deep); line-height:1.15; margin:0 0 18px; }
+    h1 { font-size:clamp(2.8rem,6vw,5rem); }
+    h2 { font-size:clamp(2rem,4vw,3.1rem); }
+    .lead { font-size:1.13rem; color:var(--muted); max-width:600px; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+    .hero-photo { border-radius:28px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/3; }
+    .hero-photo img { height:100%; object-fit:cover; }
+    .intro { padding:70px 0; background:#fff; }
+    .center { text-align:center; max-width:760px; margin:0 auto 40px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .card { background:var(--cream); border:1px solid #e9e1d4; padding:28px; border-radius:var(--radius); }
+    .icon { font-size:1.7rem; margin-bottom:12px; }
+    .card h3 { font-size:1.35rem; }
+    .gallery-section { padding:78px 0; }
+    .gallery { display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+    .gallery figure { margin:0; border-radius:16px; overflow:hidden; background:#ddd; min-height:220px; box-shadow:0 6px 20px rgba(0,0,0,.07); }
+    .gallery figure:nth-child(1), .gallery figure:nth-child(2) { grid-column:span 6; }
+    .gallery figure:nth-child(n+3) { grid-column:span 4; }
+    .gallery img { height:100%; min-height:220px; object-fit:cover; transition:transform .35s; }
+    .gallery figure:hover img { transform:scale(1.035); }
+    .gallery figcaption { padding:10px 13px; background:#fff; font-size:.88rem; font-weight:600; color:var(--muted); }
+    .amenities { background:var(--warm); padding:75px 0; }
+    .amenity-grid { display:grid; grid-template-columns:1fr 1fr; gap:35px; align-items:center; }
+    .amenity-list { display:grid; grid-template-columns:1fr 1fr; gap:13px; }
+    .amenity { background:rgba(255,255,255,.72); padding:15px 17px; border-radius:14px; font-weight:600; }
+    .room-card { background:#fff; border-radius:22px; padding:30px; box-shadow:var(--shadow); }
+    .room-card ul { padding-left:20px; margin-bottom:0; }
+    .contact { padding:78px 0; }
+    .contact-box { background:var(--deep); color:#fff; border-radius:28px; padding:48px; display:grid; grid-template-columns:1fr auto; gap:35px; align-items:center; }
+    .contact-box h2 { color:#fff; }
+    .contact-box p { color:#dfe7e0; max-width:620px; }
+    .contact-details { display:flex; flex-direction:column; gap:10px; margin-top:20px; }
+    footer { background:#1e2b23; color:#cbd4cd; padding:30px 0; font-size:.9rem; }
+    footer .container { display:flex; justify-content:space-between; gap:20px; }
+    @media(max-width:800px){
+      .links { display:none; }
+      .hero-grid,.amenity-grid,.contact-box { grid-template-columns:1fr; }
+      .cards { grid-template-columns:1fr; }
+      .gallery figure:nth-child(n) { grid-column:span 6; }
+      .contact-box { padding:32px; }
+    }
+    @media(max-width:520px){
+      .gallery figure:nth-child(n) { grid-column:span 12; }
+      .amenity-list { grid-template-columns:1fr; }
+      .topbar .container { flex-direction:column; gap:2px; }
+      .hero { padding-top:35px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div>Faith Rwams AFH • Federal Way, Washington</div>
+      <div>Call <a href="tel:+12533922893">(253) 392-2893</a></div>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">Faith Rwams AFH<span>Compassionate • Comfortable • Welcoming</span></a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#home-tour">Our Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary" href="#contact">Schedule a Tour</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Adult Family Home • Federal Way, WA</div>
+          <h1>A comfortable place to feel at home.</h1>
+          <p class="lead">Welcome to Faith Rwams AFH, a warm and inviting adult family home designed around comfort, dignity, safety, and a sense of community.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+12533922893">📞 Call Us</a>
+            <a class="btn btn-light" href="mailto:Faithrwams@gmail.com?subject=Faith%20Rwams%20AFH%20Tour%20Request">✉️ Request Information</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="images/exterior-1.png" alt="Exterior of Faith Rwams AFH">
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="container">
+        <div class="center">
+          <div class="eyebrow">Welcome</div>
+          <h2>More than a home. We are family.</h2>
+          <p>Faith Rwams AFH was founded by Jackline Nyoro and her family with a heart for caring for others. For the past four years, our family has been building experience in adult family home care. Faith Rwams AFH is our second home, and we are excited to continue growing while creating a place where residents and their families can feel safe, respected, and cared for.</p>
+          <p>To us, this is more than a business. It is a family. We believe that every person deserves to be treated with kindness, dignity, patience, and genuine care. When you choose Faith Rwams AFH, we want you and your family to feel confident that your loved one is welcomed into a home where we care for them as we would care for our own family.</p>
+          <p>We look forward to growing this journey together and earning the trust of every family we have the privilege of serving.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">🏠</div><h3>Home-Like Environment</h3><p>Comfortable shared spaces, private bedrooms, a dining area, kitchen, and outdoor deck create a familiar residential setting.</p></article>
+          <article class="card"><div class="icon">❤️</div><h3>Respect & Dignity</h3><p>Our goal is to create a supportive environment where each resident is treated with respect, kindness, and consideration.</p></article>
+          <article class="card"><div class="icon">🌿</div><h3>Comfortable Living</h3><p>Bright common areas, accessible features, landscaped outdoor space, and a calm residential setting help residents feel at ease.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="home-tour">
+      <div class="container">
+        <div class="center">
+          <div class="eyebrow">Take a look around</div>
+          <h2>Our Home</h2>
+          <p>Explore the spaces at Faith Rwams AFH, from the living and dining areas to bedrooms, bathrooms, kitchen, laundry, and outdoor spaces.</p>
+        </div>
+        <div class="gallery">
+          <figure><img src="images/exterior-1.png" alt="Front exterior of the home"><figcaption>Home exterior</figcaption></figure>
+          <figure><img src="images/exterior-2.png" alt="Front view and landscaped yard"><figcaption>Front yard & entrance</figcaption></figure>
+          <figure><img src="images/living-room-1.jpeg" alt="Living room and kitchen"><figcaption>Living room & kitchen</figcaption></figure>
+          <figure><img src="images/living-room-2.jpeg" alt="Living room seating area"><figcaption>Comfortable living area</figcaption></figure>
+          <figure><img src="images/kitchen.jpeg" alt="Kitchen with modern appliances"><figcaption>Kitchen</figcaption></figure>
+          <figure><img src="images/dining-area.jpeg" alt="Dining area with table and chairs"><figcaption>Dining area</figcaption></figure>
+          <figure><img src="images/laundry.jpeg" alt="Laundry room"><figcaption>Laundry area</figcaption></figure>
+          <figure><img src="images/outdoor-deck-1.jpeg" alt="Outdoor deck"><figcaption>Outdoor deck</figcaption></figure>
+          <figure><img src="images/outdoor-deck-2.jpeg" alt="Outdoor deck and stairs"><figcaption>Outdoor space</figcaption></figure>
+          <figure><img src="images/bedroom-1.jpeg" alt="Resident bedroom"><figcaption>Bedroom</figcaption></figure>
+          <figure><img src="images/bedroom-2.jpeg" alt="Resident bedroom"><figcaption>Bedroom</figcaption></figure>
+          <figure><img src="images/bedroom-3.jpeg" alt="Resident bedroom"><figcaption>Bedroom</figcaption></figure>
+          <figure><img src="images/bedroom-4.jpeg" alt="Resident bedroom"><figcaption>Bedroom</figcaption></figure>
+          <figure><img src="images/bedroom-5.jpeg" alt="Resident bedroom"><figcaption>Bedroom</figcaption></figure>
+          <figure><img src="images/bathroom-1.jpeg" alt="Bathroom with grab bar"><figcaption>Bathroom</figcaption></figure>
+          <figure><img src="images/bathroom-2.jpeg" alt="Accessible bathroom with grab bars"><figcaption>Bathroom with safety features</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="amenities" id="rooms">
+      <div class="container amenity-grid">
+        <div>
+          <div class="eyebrow">Comfort & convenience</div>
+          <h2>Designed for everyday living</h2>
+          <p>Our home combines a residential feel with practical spaces that support comfortable day-to-day living.</p>
+          <div class="amenity-list">
+            <div class="amenity">✓ Furnished bedrooms</div>
+            <div class="amenity">✓ Shared living area</div>
+            <div class="amenity">✓ Dining space</div>
+            <div class="amenity">✓ Full kitchen</div>
+            <div class="amenity">✓ Laundry room</div>
+            <div class="amenity">✓ Outdoor deck</div>
+            <div class="amenity">✓ Landscaped yard</div>
+            <div class="amenity">✓ Bathroom safety features</div>
+          </div>
+        </div>
+        <div class="room-card">
+          <h3>About the home</h3>
+          <ul>
+            <li>Located in Federal Way, Washington</li>
+            <li>Residential, home-like setting</li>
+            <li>Comfortable common areas</li>
+            <li>Private resident bedrooms</li>
+            <li>Outdoor space for fresh air and relaxation</li>
+            <li>Convenient kitchen and dining area</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">Get in touch</div>
+            <h2>Interested in learning more?</h2>
+            <p>Contact Faith Rwams AFH to ask questions, request additional information, or schedule a time to visit the home.</p>
+            <div class="contact-details">
+              <div>👩🏽‍💼 <strong>Provider:</strong> Jackline Nyoro</div>
+              <div>📍 <strong>Address:</strong> <a href="https://www.google.com/maps/search/?api=1&query=303+SW+328th+St%2C+Federal+Way%2C+WA" target="_blank" rel="noopener">303 SW 328th St, Federal Way, WA</a></div>
+              <div>📞 <strong>Phone:</strong> <a href="tel:+12533922893">(253) 392-2893</a></div>
+              <div>✉️ <strong>Email:</strong> <a href="mailto:Faithrwams@gmail.com">Faithrwams@gmail.com</a></div>
+            </div>
+          </div>
+          <div>
+            <a class="btn btn-light" href="mailto:Faithrwams@gmail.com?subject=Faith%20Rwams%20AFH%20Tour%20Request">Schedule a Tour</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2026 Faith Rwams AFH. All rights reserved.</div>
+      <div>Federal Way, WA</div>
+    </div>
+  </footer>
+</body>
+</html>
